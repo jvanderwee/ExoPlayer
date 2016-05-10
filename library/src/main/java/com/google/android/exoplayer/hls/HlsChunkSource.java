@@ -727,8 +727,7 @@ public class HlsChunkSource implements HlsTrackSelector.Output {
 
   private MediaPlaylistChunk newMediaPlaylistChunk(int variantIndex) {
     Uri mediaPlaylistUri = UriUtil.resolveToUri(baseUri, variants[variantIndex].url);
-    DataSpec dataSpec = new DataSpec(mediaPlaylistUri, 0, C.LENGTH_UNBOUNDED, null,
-        DataSpec.FLAG_ALLOW_GZIP);
+    DataSpec dataSpec = new DataSpec(mediaPlaylistUri, 0, C.LENGTH_UNBOUNDED, null, 0);
     return new MediaPlaylistChunk(dataSource, dataSpec, scratchSpace, playlistParser, variantIndex,
         mediaPlaylistUri.toString());
   }
